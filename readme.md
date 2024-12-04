@@ -10,6 +10,11 @@ spring.datasource.url=jdbc:mysql://localhost:3306/weatherapi
 spring.datasource.username= {{your_username}}
 spring.datasource.password= {{your_password}}
 
+<h2>Things to do or Improve</h2>
+Add handling to not overwhelm bulk adding data to DB
+Add proper testing
+Add a CLI menu for user to pick from selection of actions
+
 <h2>GET</h2> 
 all data http://localhost:8080/api/get-all-data
 By sensor http://localhost:8080/api/sensor/sensor_1
@@ -19,7 +24,7 @@ Between Date Range http://localhost:8080/api/get-date-range?start=2024-01-01T00:
 Add Data http://localhost:8080/api/add-data
 Bulk Add Data http://localhost:8080/api/bulk-add-data
 
-Sample Bulk Add Data
+<h3>Sample Bulk Add Data</h3>
 
 [
 {
@@ -143,6 +148,3 @@ Sample Bulk Add Data
 "timestamp": "2024-06-04T19:14:30"
 }
 ]
-
-Things to do or Improve
-Add handling to not overwhelm bulk adding data to DB

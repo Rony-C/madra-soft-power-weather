@@ -19,6 +19,9 @@ Add a CLI menu for user to pick from selection of actions
 all data http://localhost:8080/api/get-all-data
 By sensor http://localhost:8080/api/sensor/sensor_1
 Between Date Range http://localhost:8080/api/get-date-range?start=2024-01-01T00:00:00&end=2024-12-31T00:00:00
+Get avg by metric and sensor id http://localhost:8080/api/average/sensor/sensor_2/metric/temperature
+Get avg by metric http://localhost:8080/api/average/metric/humidity
+Get average of all sensors http://localhost:8080/api/average/sensors
 
 <h2>POST</h2>
 Add Data http://localhost:8080/api/add-data

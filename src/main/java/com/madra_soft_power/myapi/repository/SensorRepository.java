@@ -45,11 +45,21 @@ public interface SensorRepository extends JpaRepository<SensorData, Long> {
     @Query("SELECT AVG(s.value) FROM SensorData s WHERE s.sensorId = :sensorId AND s.metric = :metric")
     Double getAvgSensorIdAndMetric(@Param("sensorId") String sensorId, @Param("metric") String metric);
 
-    // Calculate average value for all data of a specific metric
+    /**
+     * Get average of specific metric
+     * 
+     * @param metric
+     * @return
+     */
     @Query("SELECT AVG(s.value) FROM SensorData s WHERE s.metric = :metric")
     Double getAvgMetricValue(@Param("metric") String metric);
 
-    // Calculate overall average for all metrics
+    /**
+     * Get average for all metrics
+     * 
+     * @return
+     */
     @Query("SELECT AVG(s.value) FROM SensorData s")
     Double getSensorsAverage();
+
 }

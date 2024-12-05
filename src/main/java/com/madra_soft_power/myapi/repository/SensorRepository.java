@@ -22,7 +22,7 @@ public interface SensorRepository extends JpaRepository<SensorData, Long> {
      * Get results based on sensorID
      * 
      * @param sensorId
-     * @return
+     * @return All data for sensor ID
      */
     List<SensorData> getBySensorId(String sensorId);
 
@@ -40,7 +40,7 @@ public interface SensorRepository extends JpaRepository<SensorData, Long> {
      * 
      * @param sensorId
      * @param metric
-     * @return
+     * @return Average of sensor ID and metric
      */
     @Query("SELECT AVG(s.value) FROM SensorData s WHERE s.sensorId = :sensorId AND s.metric = :metric")
     Double getAvgSensorIdAndMetric(@Param("sensorId") String sensorId, @Param("metric") String metric);
@@ -49,7 +49,7 @@ public interface SensorRepository extends JpaRepository<SensorData, Long> {
      * Get average of specific metric
      * 
      * @param metric
-     * @return
+     * @return Average of metric
      */
     @Query("SELECT AVG(s.value) FROM SensorData s WHERE s.metric = :metric")
     Double getAvgMetricValue(@Param("metric") String metric);
@@ -57,7 +57,7 @@ public interface SensorRepository extends JpaRepository<SensorData, Long> {
     /**
      * Get average for all metrics
      * 
-     * @return
+     * @return Average for all metrics
      */
     @Query("SELECT AVG(s.value) FROM SensorData s")
     Double getSensorsAverage();
@@ -68,7 +68,7 @@ public interface SensorRepository extends JpaRepository<SensorData, Long> {
      * @param sensorId
      * @param startDate
      * @param endDate
-     * @return
+     * @return Average temperature for sensor ID in last 7 days
      */
     @Query("SELECT AVG(s.value) FROM SensorData s " +
             "WHERE s.sensorId = :sensorId AND s.metric = 'Temperature' " +

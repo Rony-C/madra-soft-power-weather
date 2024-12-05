@@ -32,7 +32,7 @@ public class DataController {
      * POST data
      * 
      * @param data
-     * @return
+     * @return Successful response for adding entry
      */
     @PostMapping("/add-data")
     public ResponseEntity<String> addData(@RequestBody SensorData data) {
@@ -44,7 +44,7 @@ public class DataController {
      * POST data in bulk via list
      * 
      * @param data
-     * @return
+     * @return Successful response for bulk adding data
      */
     @PostMapping("/bulk-add-data")
     public ResponseEntity<String> bulkAddData(@RequestBody List<SensorData> data) {
@@ -55,7 +55,7 @@ public class DataController {
     /**
      * Get all data from table
      * 
-     * @return
+     * @return All data from table
      */
     @GetMapping("/get-all-data")
     public ResponseEntity<List<SensorData>> getAllData() {
@@ -66,7 +66,7 @@ public class DataController {
      * Get data by sensorId passed as parameter
      * 
      * @param sensorId
-     * @return
+     * @return All data for sensor ID
      */
     @GetMapping("/sensor/{sensorId}")
     public ResponseEntity<List<SensorData>> getBySensorID(@PathVariable String sensorId) {
@@ -78,7 +78,7 @@ public class DataController {
      * 
      * @param start
      * @param end
-     * @return
+     * @return All data between timeframes
      */
     @GetMapping("/get-date-range")
     public ResponseEntity<List<SensorData>> getByDatRange(
@@ -94,7 +94,7 @@ public class DataController {
      * 
      * @param sensorId
      * @param metric
-     * @return
+     * @return Average data by sensor ID and metric, eg. Temperatur, Humidity
      */
     @GetMapping("/average/sensor/{sensorId}/metric/{metric}")
     public ResponseEntity<Double> getAvgForSensorIDAndMetric(
@@ -108,7 +108,7 @@ public class DataController {
      * Get average by metric
      * 
      * @param metric
-     * @return
+     * @return Average value of metric
      */
     @GetMapping("/average/metric/{metric}")
     public ResponseEntity<Double> getAverageForMetric(@PathVariable String metric) {
@@ -119,7 +119,7 @@ public class DataController {
     /**
      * Get sensors average
      * 
-     * @return
+     * @return Average of all sensor data
      */
     @GetMapping("/average/sensors")
     public ResponseEntity<Double> getSensorsAverage() {
@@ -131,7 +131,7 @@ public class DataController {
      * Get avg of specific sensor from last week
      * 
      * @param sensorId
-     * @return
+     * @return Double, average of sensor data from last 7 days
      */
     @GetMapping("/average/{sensorId}/last-week")
     public ResponseEntity<Double> getAvgSensorTempLastWeek(@PathVariable String sensorId) {

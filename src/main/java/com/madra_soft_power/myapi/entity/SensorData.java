@@ -7,8 +7,8 @@ import java.time.LocalDateTime;
 
 /**
  * Defines what the SensorMetric pojo needs
- * Annotating as JPA Entity fo db
- * Defining table name instead of being auto-generated
+ * Annotating as JPA Entity for db
+ * Defining table name instead of being auto-generated with Class Name
  */
 
 @Entity

@@ -48,7 +48,7 @@ public class DataService {
     /**
      * Get all Data from table
      * 
-     * @return
+     * @return All data
      */
     public List<SensorData> getAllData() {
         return repository.findAll();
@@ -58,7 +58,7 @@ public class DataService {
      * Get all data by sensorID. Sensor ID passed as parameter
      * 
      * @param sensorId
-     * @return
+     * @return All data by sensor ID
      */
     public List<SensorData> getDataBySensorId(String sensorId) {
         return repository.getBySensorId(sensorId);
@@ -69,17 +69,18 @@ public class DataService {
      * 
      * @param start
      * @param end
-     * @return
+     * @return All data between two timestamps
      */
     public List<SensorData> getDataByDateRange(LocalDateTime start, LocalDateTime end) {
         return repository.getByTimestampBetween(start, end);
     }
 
     /**
+     * Get average by sensor and metric
      * 
      * @param sensorID
      * @param metric
-     * @return
+     * @return Avg for sensor ID and metric
      */
     public Double getAvgSensorIdAndMetric(String sensorID, String metric) {
         return repository.getAvgSensorIdAndMetric(sensorID, metric);
@@ -89,7 +90,7 @@ public class DataService {
      * Get avg value by metric
      * 
      * @param metric
-     * @return
+     * @return All time average for metric
      */
     public Double getAvgMetricValue(String metric) {
         return repository.getAvgMetricValue(metric);
@@ -98,7 +99,7 @@ public class DataService {
     /**
      * Get avg of all sensors
      * 
-     * @return
+     * @return All time average for all sensors
      */
     public Double getSensorsAverage() {
         return repository.getSensorsAverage();
@@ -109,7 +110,7 @@ public class DataService {
      * Handles null values
      * 
      * @param sensorId
-     * @return
+     * @return Average temperatur for last 7 days or 0.0 if null
      */
     public Double getAvgSensorTempLastWeek(String sensorId) {
         LocalDateTime endTime = LocalDateTime.now();

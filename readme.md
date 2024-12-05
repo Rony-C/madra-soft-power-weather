@@ -1,5 +1,4 @@
 Using Java, Spring Boot, MySQL DB, Postman
-Postman to send POST & GET requests
 
 <b>Repository</b> > Direct interaction with the database. Use predefined and custom query methods.
 <b>Service</b> > Abstraction over the Repository. Single point of access for data manipulation.
@@ -15,6 +14,7 @@ Add handling to not overwhelm bulk adding data to DB
 Add Unit testing, validate in and output, data types, etc.
 Add a CLI menu for user to pick from selection of actions
 Add input sanitation and validation, null handling
+Add more relevant and nuanced queries that can be manipulated by end user
 
 <h2>Postman Collection Included</h2>
 

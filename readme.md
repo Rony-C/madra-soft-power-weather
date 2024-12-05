@@ -1,38 +1,64 @@
-Using Java, Spring Boot, MySQL DB, Postman
+<p>
+I used Java, Maeven, Spring Boot, MySQL and Postman for this assignment. I would say I am roughly equally skilled at Java and Python. I have been meaning to give Spring Boot a good try and this seemed like a good opportunity to use and learn a bit about it.<br>
 
-<b>Repository</b> > Direct interaction with the database. Use predefined and custom query methods.
-<b>Service</b> > Abstraction over the Repository. Single point of access for data manipulation.
-<b>Controller</b> > Handles HTTP requests and uses Service to work with data.
+MySQL Server is running locally to store the db info.
+I used Postman to test my API calls.<br>
 
-Start DB on port 3306 and DB name is weatherapi
-spring.datasource.url=jdbc:mysql://localhost:3306/weatherapi
-spring.datasource.username= {{your_username}}
-spring.datasource.password= {{your_password}}
+I generated JavaDocs with <strong>mvn javadoc:javadoc</strong><br>
+
+</p>
+<p>
+<h4>Postman API Call Collection Included in project files</h4>
+<b>Ronan GET and POST for Weather App.postman_collection.json</b>
+</p>
+<p>
+<b>Repository</b> > Direct interaction with the database. Use predefined and custom query methods.<br>
+<b>Service</b> > Abstraction over the Repository. Single point of access for data manipulation.<br>
+<b>Controller</b> > Handles HTTP requests and uses Service to work with data.<br>
+<b>Entity</b> > Defines columns and JPA entity to be used with data calls<br>
+</p>
+<p>
+Start MySQL DB on port 3306 and create schema with name <b>weatherapi</b><br>
+
+Info below is from application.properties file<br>
+spring.datasource.url=jdbc:mysql://localhost:3306/weatherapi<br>
+spring.datasource.username= {{your_username}}<br>
+spring.datasource.password= {{your_password}}<br>
+
+</p>
 
 <h2>Things to do or Improve</h2>
-Add handling to not overwhelm bulk adding data to DB
-Add Unit testing, validate in and output, data types, etc.
-Add a CLI menu for user to pick from selection of actions
-Add input sanitation and validation, null handling
-Add more relevant and nuanced queries that can be manipulated by end user
-
-<h2>Postman Collection Included</h2>
+<p>
+<ul>
+<li>Add handling to not overwhelm bulk adding data to DB. On more than one occasion I crashed my DB bulk adding data via API.</li>
+<li>Add Unit testing, validate in and output, data types, etc.</li>
+<li>Add a CLI menu for user to pick from selection of actions</li>
+<li>Add input sanitation and validation, null handling</li>
+<li>Add more relevant and nuanced queries that can be manipulated by end user</li>
+<li>Add Exception handing, try catch blocks</li>
+</ul>
+The main reason I didn't add any of these was down to time, I wanted to stick to about 5/6 hours for the project including some study time.
+<p>
 
 <h2>GET</h2> 
-all data http://localhost:8080/api/get-all-data
-By sensor http://localhost:8080/api/sensor/sensor_1
-Between Date Range http://localhost:8080/api/get-date-range?start=2024-01-01T00:00:00&end=2024-12-31T00:00:00
-Get avg by metric and sensor id http://localhost:8080/api/average/sensor/sensor_2/metric/temperature
-Get avg by metric http://localhost:8080/api/average/metric/humidity
-Get average of all sensors http://localhost:8080/api/average/sensors
-Get average by sensor for last week http://localhost:8080/api/average/sensor_1/last-week
+<ul>
+<li>all data http://localhost:8080/api/get-all-data</li>
+<li>By sensor http://localhost:8080/api/sensor/sensor_1</li>
+<li>Between Date Range http://localhost:8080/api/get-date-range?start=2024-01-01T00:00:00&</li>end=2024-12-31T00:00:00
+<li>Get avg by metric and sensor id http://localhost:8080/api/average/sensor/sensor_2/metric/temperature</li>
+<li>Get avg by metric http://localhost:8080/api/average/metric/humidity</li>
+<li>Get average of all sensors http://localhost:8080/api/average/sensors</li>
+<li>Get average by sensor for last week http://localhost:8080/api/average/sensor_1/last-week</li>
+</ul>
 
 <h2>POST</h2>
-Add Data http://localhost:8080/api/add-data
-Bulk Add Data http://localhost:8080/api/bulk-add-data
+<ul>
+<li>Add Data http://localhost:8080/api/add-data</li>
+<li>Bulk Add Data http://localhost:8080/api/bulk-add-data</li>
+</ul>
 
 <h3>Sample Bulk Add Data</h3>
-
+<code>
 [
 {
 "sensorId": "sensor_1",
@@ -155,3 +181,4 @@ Bulk Add Data http://localhost:8080/api/bulk-add-data
 "timestamp": "2024-06-04T19:14:30"
 }
 ]
+</code>

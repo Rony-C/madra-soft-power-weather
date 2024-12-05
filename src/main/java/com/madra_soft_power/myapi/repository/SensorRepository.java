@@ -62,4 +62,19 @@ public interface SensorRepository extends JpaRepository<SensorData, Long> {
     @Query("SELECT AVG(s.value) FROM SensorData s")
     Double getSensorsAverage();
 
+    /**
+     * Get avg temp for sensor for last week
+     * 
+     * @param sensorId
+     * @param startDate
+     * @param endDate
+     * @return
+     */
+    @Query("SELECT AVG(s.value) FROM SensorData s " +
+            "WHERE s.sensorId = :sensorId AND s.metric = 'Temperature' " +
+            "AND s.timestamp BETWEEN :startDate AND :endDate")
+    Double getAvgTempLastWeek(
+            @Param("sensorId") String sensorId,
+            @Param("startDate") LocalDateTime startDate,
+            @Param("endDate") LocalDateTime endDate);
 }

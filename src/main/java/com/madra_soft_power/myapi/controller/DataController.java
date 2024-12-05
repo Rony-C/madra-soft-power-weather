@@ -11,8 +11,6 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Handles the API Calls with RestController
@@ -128,4 +126,17 @@ public class DataController {
         Double average = service.getSensorsAverage();
         return ResponseEntity.ok(average);
     }
+
+    /**
+     * Get avg of specific sensor from last week
+     * 
+     * @param sensorId
+     * @return
+     */
+    @GetMapping("/average/{sensorId}/last-week")
+    public ResponseEntity<Double> getAvgSensorTempLastWeek(@PathVariable String sensorId) {
+        Double avgTemp = service.getAvgSensorTempLastWeek(sensorId);
+        return ResponseEntity.ok(avgTemp);
+    }
+
 }

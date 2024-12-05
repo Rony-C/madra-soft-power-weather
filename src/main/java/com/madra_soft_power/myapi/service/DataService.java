@@ -85,12 +85,37 @@ public class DataService {
         return repository.getAvgSensorIdAndMetric(sensorID, metric);
     }
 
+    /**
+     * Get avg value by metric
+     * 
+     * @param metric
+     * @return
+     */
     public Double getAvgMetricValue(String metric) {
         return repository.getAvgMetricValue(metric);
     }
 
+    /**
+     * Get avg of all sensors
+     * 
+     * @return
+     */
     public Double getSensorsAverage() {
         return repository.getSensorsAverage();
     }
 
+    /**
+     * Get avg of sensor from last 7 days
+     * Handles null values
+     * 
+     * @param sensorId
+     * @return
+     */
+    public Double getAvgSensorTempLastWeek(String sensorId) {
+        LocalDateTime endTime = LocalDateTime.now();
+        LocalDateTime startTime = endTime.minusDays(7);
+
+        Double avgTemp = repository.getAvgTempLastWeek(sensorId, startTime, endTime);
+        return avgTemp != null ? avgTemp : 0.0;
+    }
 }

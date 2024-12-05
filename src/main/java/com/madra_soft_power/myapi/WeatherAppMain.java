@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class WeatherAppMain {
 
 	/**
-	 * Starter
+	 * Starter class
 	 * 
 	 * @param args
 	 */

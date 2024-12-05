@@ -1,0 +1,5 @@
+com.madra_soft_power.myapi
+com.madra_soft_power.myapi.controller
+com.madra_soft_power.myapi.entity
+com.madra_soft_power.myapi.repository
+com.madra_soft_power.myapi.service

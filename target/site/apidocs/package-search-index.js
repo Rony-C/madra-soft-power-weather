@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.madra_soft_power.myapi"},{"l":"com.madra_soft_power.myapi.controller"},{"l":"com.madra_soft_power.myapi.entity"},{"l":"com.madra_soft_power.myapi.repository"},{"l":"com.madra_soft_power.myapi.service"}];updateSearchResults();

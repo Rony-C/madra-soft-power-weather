@@ -1,4 +1,4 @@
-Using Java, Spring Boot, MySQL DB
+Using Java, Spring Boot, MySQL DB, Postman
 Postman to send POST & GET requests
 
 <b>Repository</b> > Direct interaction with the database. Use predefined and custom query methods.
@@ -12,8 +12,11 @@ spring.datasource.password= {{your_password}}
 
 <h2>Things to do or Improve</h2>
 Add handling to not overwhelm bulk adding data to DB
-Add proper testing
+Add Unit testing, validate in and output, data types, etc.
 Add a CLI menu for user to pick from selection of actions
+Add input sanitation and validation, null handling
+
+<h2>Postman Collection Included</h2>
 
 <h2>GET</h2> 
 all data http://localhost:8080/api/get-all-data
@@ -22,6 +25,7 @@ Between Date Range http://localhost:8080/api/get-date-range?start=2024-01-01T00:
 Get avg by metric and sensor id http://localhost:8080/api/average/sensor/sensor_2/metric/temperature
 Get avg by metric http://localhost:8080/api/average/metric/humidity
 Get average of all sensors http://localhost:8080/api/average/sensors
+Get average by sensor for last week http://localhost:8080/api/average/sensor_1/last-week
 
 <h2>POST</h2>
 Add Data http://localhost:8080/api/add-data

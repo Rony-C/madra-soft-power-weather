@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "90480cba-4437-4882-aa65-13fdf4895ec2",
+		"name": "Ronan GET and POST for Weather App",
+		"description": "Small collection of ready to use API calls for app.\n\n#### **Send Body data and Bulk Body data**\n\n```\n    \"name\": \"Add {\n    \"sensorId\": \"sensor_3\",\n    \"metric\": \"Humidity\",\n    \"value\": -8.97,\n    \"timestamp\": \"2024-06-05T19:14:30\"\n  }\n\n ```\n\n```\n[\n  {\n    \"sensorId\": \"sensor_1\",\n    \"metric\": \"Humidity\",\n    \"value\": 32.95,\n    \"timestamp\": \"2024-06-02T19:41:31\"\n  },\n  {\n    \"sensorId\": \"sensor_3\",\n    \"metric\": \"Wind Speed\",\n    \"value\": -1.55,\n    \"timestamp\": \"2024-06-18T08:04:23\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Humidity\",\n    \"value\": 20.35,\n    \"timestamp\": \"2024-06-02T03:30:22\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Humidity\",\n    \"value\": 12.29,\n    \"timestamp\": \"2024-06-28T09:15:37\"\n  },\n  {\n    \"sensorId\": \"sensor_2\",\n    \"metric\": \"Wind Speed\",\n    \"value\": 39.24,\n    \"timestamp\": \"2024-06-08T12:06:32\"\n  },\n  {\n    \"sensorId\": \"sensor_4\",\n    \"metric\": \"Temperature\",\n    \"value\": 24.28,\n    \"timestamp\": \"2024-06-10T21:16:41\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Wind Speed\",\n    \"value\": -8.16,\n    \"timestamp\": \"2024-06-13T07:18:52\"\n  },\n  {\n    \"sensorId\": \"sensor_2\",\n    \"metric\": \"Temperature\",\n    \"value\": 9.99,\n    \"timestamp\": \"2024-06-04T02:35:48\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Wind Speed\",\n    \"value\": -18.58,\n    \"timestamp\": \"2024-06-16T05:49:55\"\n  },\n  {\n    \"sensorId\": \"sensor_2\",\n    \"metric\": \"Temperature\",\n    \"value\": 36.88,\n    \"timestamp\": \"2024-06-12T04:41:59\"\n  },\n  {\n    \"sensorId\": \"sensor_2\",\n    \"metric\": \"Wind Speed\",\n    \"value\": 15.36,\n    \"timestamp\": \"2024-06-25T10:39:15\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Wind Speed\",\n    \"value\": -9.37,\n    \"timestamp\": \"2024-06-28T02:15:36\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Temperature\",\n    \"value\": 20.67,\n    \"timestamp\": \"2024-06-08T14:54:18\"\n  },\n  {\n    \"sensorId\": \"sensor_1\",\n    \"metric\": \"Temperature\",\n    \"value\": 40.98,\n    \"timestamp\": \"2024-06-11T11:17:34\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Humidity\",\n    \"value\": -16.11,\n    \"timestamp\": \"2024-06-16T22:30:26\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Wind Speed\",\n    \"value\": 19.63,\n    \"timestamp\": \"2024-06-10T09:48:25\"\n  },\n  {\n    \"sensorId\": \"sensor_4\",\n    \"metric\": \"Humidity\",\n    \"value\": -1.83,\n    \"timestamp\": \"2024-06-13T18:03:36\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Wind Speed\",\n    \"value\": 44.42,\n    \"timestamp\": \"2024-06-05T06:25:47\"\n  },\n  {\n    \"sensorId\": \"sensor_1\",\n    \"metric\": \"Humidity\",\n    \"value\": 47.66,\n    \"timestamp\": \"2024-06-13T06:35:50\"\n  },\n  {\n    \"sensorId\": \"sensor_3\",\n    \"metric\": \"Humidity\",\n    \"value\": -8.97,\n    \"timestamp\": \"2024-06-04T19:14:30\"\n  }\n]\n\n\n ```\n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23499068"
+	},
+	"item": [
+		{
+			"name": "Get data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/get-all-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"get-all-data"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Get By Sensor ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/sensor/sensor_1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sensor",
+						"sensor_1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get between dates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/get-date-range?start=2024-01-01T00:00:00&end=2024-12-31T00:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"get-date-range"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "2024-01-01T00:00:00"
+						},
+						{
+							"key": "end",
+							"value": "2024-12-31T00:00:00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\n    \"sensorId\": \"sensor_3\",\n    \"metric\": \"Humidity\",\n    \"value\": -8.97,\n    \"timestamp\": \"2024-06-05T19:14:30\"\n  }\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/add-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"add-data"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "Bulk Add Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"sensorId\": \"sensor_1\",\n    \"metric\": \"Humidity\",\n    \"value\": 32.95,\n    \"timestamp\": \"2024-06-02T19:41:31\"\n  },\n  {\n    \"sensorId\": \"sensor_3\",\n    \"metric\": \"Wind Speed\",\n    \"value\": -1.55,\n    \"timestamp\": \"2024-06-18T08:04:23\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Humidity\",\n    \"value\": 20.35,\n    \"timestamp\": \"2024-06-02T03:30:22\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Humidity\",\n    \"value\": 12.29,\n    \"timestamp\": \"2024-06-28T09:15:37\"\n  },\n  {\n    \"sensorId\": \"sensor_2\",\n    \"metric\": \"Wind Speed\",\n    \"value\": 39.24,\n    \"timestamp\": \"2024-06-08T12:06:32\"\n  },\n  {\n    \"sensorId\": \"sensor_4\",\n    \"metric\": \"Temperature\",\n    \"value\": 24.28,\n    \"timestamp\": \"2024-06-10T21:16:41\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Wind Speed\",\n    \"value\": -8.16,\n    \"timestamp\": \"2024-06-13T07:18:52\"\n  },\n  {\n    \"sensorId\": \"sensor_2\",\n    \"metric\": \"Temperature\",\n    \"value\": 9.99,\n    \"timestamp\": \"2024-06-04T02:35:48\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Wind Speed\",\n    \"value\": -18.58,\n    \"timestamp\": \"2024-06-16T05:49:55\"\n  },\n  {\n    \"sensorId\": \"sensor_2\",\n    \"metric\": \"Temperature\",\n    \"value\": 36.88,\n    \"timestamp\": \"2024-06-12T04:41:59\"\n  },\n  {\n    \"sensorId\": \"sensor_2\",\n    \"metric\": \"Wind Speed\",\n    \"value\": 15.36,\n    \"timestamp\": \"2024-06-25T10:39:15\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Wind Speed\",\n    \"value\": -9.37,\n    \"timestamp\": \"2024-06-28T02:15:36\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Temperature\",\n    \"value\": 20.67,\n    \"timestamp\": \"2024-06-08T14:54:18\"\n  },\n  {\n    \"sensorId\": \"sensor_1\",\n    \"metric\": \"Temperature\",\n    \"value\": 40.98,\n    \"timestamp\": \"2024-06-11T11:17:34\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Humidity\",\n    \"value\": -16.11,\n    \"timestamp\": \"2024-06-16T22:30:26\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Wind Speed\",\n    \"value\": 19.63,\n    \"timestamp\": \"2024-06-10T09:48:25\"\n  },\n  {\n    \"sensorId\": \"sensor_4\",\n    \"metric\": \"Humidity\",\n    \"value\": -1.83,\n    \"timestamp\": \"2024-06-13T18:03:36\"\n  },\n  {\n    \"sensorId\": \"sensor_5\",\n    \"metric\": \"Wind Speed\",\n    \"value\": 44.42,\n    \"timestamp\": \"2024-06-05T06:25:47\"\n  },\n  {\n    \"sensorId\": \"sensor_1\",\n    \"metric\": \"Humidity\",\n    \"value\": 47.66,\n    \"timestamp\": \"2024-06-13T06:35:50\"\n  },\n  {\n    \"sensorId\": \"sensor_3\",\n    \"metric\": \"Humidity\",\n    \"value\": -8.97,\n    \"timestamp\": \"2024-06-04T19:14:30\"\n  }\n]\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/bulk-add-data",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"bulk-add-data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Average by sensor and metric",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/average/sensor/sensor_2/metric/temperature",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"average",
+						"sensor",
+						"sensor_2",
+						"metric",
+						"temperature"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get average by metric",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/average/metric/humidity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"average",
+						"metric",
+						"humidity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get average of sensors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/average/sensors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"average",
+						"sensors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET sensors-metric-last-week",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/average/sensor_1/last-week",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"average",
+						"sensor_1",
+						"last-week"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}

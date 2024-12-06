@@ -32,7 +32,6 @@ public class DataService {
      */
     public void saveData(SensorData data) {
         repository.save(data);
-        throw new UnsupportedOperationException("Unimplemented method 'saveBulkData'");
     }
 
     /**

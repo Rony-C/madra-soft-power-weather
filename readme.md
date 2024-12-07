@@ -30,6 +30,7 @@ spring.datasource.password= {{your_password}}<br>
 <h2>Things to do or Improve</h2>
 <p>
 <ul>
+<li>Overall generally review naming conventions for classes and variables.</li>
 <li>Add handling to not overwhelm bulk adding data to DB. On more than one occasion I crashed my DB bulk adding data via API.</li>
 <li>Add more robust testing, validate in and output, data types, specific values in responses, etc.</li>
 <li>Add a CLI menu for user to pick from selection of actions</li>

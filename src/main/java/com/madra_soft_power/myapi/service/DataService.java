@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,9 +28,10 @@ public class DataService {
      * Saves single entry of data
      * 
      * @param data
+     * @return Sensor Data
      */
-    public void saveData(SensorData data) {
-        repository.save(data);
+    public SensorData saveData(SensorData data) {
+        return repository.save(data);
     }
 
     /**
@@ -39,7 +41,6 @@ public class DataService {
      */
     public void saveBulkData(List<SensorData> data) {
         repository.saveAll(data);
-        throw new UnsupportedOperationException("Unimplemented method 'saveBulkData'");
     }
 
     /**
@@ -116,4 +117,5 @@ public class DataService {
         Double avgTemp = repository.getAvgTempLastWeek(sensorId, startTime, endTime);
         return avgTemp != null ? avgTemp : 0.0;
     }
+
 }

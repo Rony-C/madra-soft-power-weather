@@ -32,11 +32,13 @@ public class SensorData {
     @Column(nullable = false)
     private LocalDateTime timestamp;
 
-    // Explicitly defined no-args constructor
+    /**
+     * Issues with NoArgs and AllArgs Constructors that I couldn't resolve so
+     * explictly defined
+     */
     public SensorData() {
     }
 
-    // Explicitly defined all-args constructor
     public SensorData(Long id, String sensorId, String metric, Double value, LocalDateTime timestamp) {
         this.id = id;
         this.sensorId = sensorId;

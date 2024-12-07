@@ -35,12 +35,12 @@ public class DataController {
      * POST data
      * 
      * @param data
-     * @return 201 Created Successful response for adding entry
+     * @return 201 Created Successful response for adding entry and String of entry
      */
     @PostMapping("/add-data")
     public ResponseEntity<String> addData(@RequestBody SensorData data) {
-        service.saveData(data);
-        return new ResponseEntity<>("Weather data added successfully", HttpStatus.CREATED);
+        String saveDataResponse = service.saveData(data).toString();
+        return new ResponseEntity<String>(saveDataResponse, HttpStatus.CREATED);
     }
 
     /**

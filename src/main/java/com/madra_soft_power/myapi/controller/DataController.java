@@ -40,7 +40,7 @@ public class DataController {
     @PostMapping("/add-data")
     public ResponseEntity<String> addData(@RequestBody SensorData data) {
         service.saveData(data);
-        return new ResponseEntity<String>("Weather data added successfully", HttpStatus.CREATED);
+        return new ResponseEntity<>("Weather data added successfully", HttpStatus.CREATED);
     }
 
     /**
@@ -54,7 +54,7 @@ public class DataController {
     @PostMapping("/bulk-add-data")
     public ResponseEntity<String> bulkAddData(@RequestBody List<SensorData> data) {
         service.saveBulkData(data);
-        return new ResponseEntity<String>("Bulk weather data added successfully", HttpStatus.CREATED);
+        return new ResponseEntity<>("Bulk weather data added successfully", HttpStatus.CREATED);
     }
 
     /**

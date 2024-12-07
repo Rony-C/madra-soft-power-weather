@@ -13,11 +13,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
+@Builder // Builder pattern
 @Table(name = "weather_data")
-
 public class SensorData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,4 +31,17 @@ public class SensorData {
 
     @Column(nullable = false)
     private LocalDateTime timestamp;
+
+    // Explicitly defined no-args constructor
+    public SensorData() {
+    }
+
+    // Explicitly defined all-args constructor
+    public SensorData(Long id, String sensorId, String metric, Double value, LocalDateTime timestamp) {
+        this.id = id;
+        this.sensorId = sensorId;
+        this.metric = metric;
+        this.value = value;
+        this.timestamp = timestamp;
+    }
 }

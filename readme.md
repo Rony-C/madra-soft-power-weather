@@ -31,11 +31,13 @@ spring.datasource.password= {{your_password}}<br>
 <p>
 <ul>
 <li>Add handling to not overwhelm bulk adding data to DB. On more than one occasion I crashed my DB bulk adding data via API.</li>
-<li>Add Unit testing, validate in and output, data types, etc.</li>
+<li>Add Unit testing, validate in and output, data types, etc. Maybe add some scripting tests in Postman</li>
 <li>Add a CLI menu for user to pick from selection of actions</li>
 <li>Add input sanitation and validation, null handling</li>
 <li>Add more relevant and nuanced queries that can be manipulated by end user</li>
 <li>Add Exception handing, try catch blocks</li>
+<li>Return new Response Entitys for each call with corresponding responses eg Ok, Created. Also, if response is NULL or empty if an incorrect sensor_id is  input to show that to the user. Still does a 200 if empty.</li>
+<li>Bulk Add data returns 500 at the moment, this needs to be fixed.</li>
 </ul>
 The main reason I didn't add any of these was down to time, I wanted to stick to about 5/6 hours for the project including some study time.
 <p>
@@ -54,7 +56,8 @@ The main reason I didn't add any of these was down to time, I wanted to stick to
 <h2>POST</h2>
 <ul>
 <li>Add Data http://localhost:8080/api/add-data</li>
-<li>Bulk Add Data http://localhost:8080/api/bulk-add-data</li>
+<li>Bulk Add Data http://localhost:8080/api/bulk-add-data </li>
+Bulk Add data returns 500 at the moment, this needs to be fixed.
 </ul>
 
 <h3>Sample Bulk Add Data</h3>

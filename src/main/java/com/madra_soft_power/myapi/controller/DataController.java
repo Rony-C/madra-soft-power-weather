@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,28 +28,33 @@ public class DataController {
     @Autowired
     private DataService service;
 
+    // TODO: Handle empty responses from DB. Any GET request is currently returning
+    // a 200 OK. Implement new ResponseEntity with HTTPStatus.ok, created, etc.
+
     /**
      * POST data
      * 
      * @param data
-     * @return Successful response for adding entry
+     * @return 201 Created Successful response for adding entry
      */
     @PostMapping("/add-data")
     public ResponseEntity<String> addData(@RequestBody SensorData data) {
         service.saveData(data);
-        return ResponseEntity.ok("Weather data added successfully");
+        return new ResponseEntity<String>("Weather data added successfully", HttpStatus.CREATED);
     }
 
     /**
      * POST data in bulk via list
+     * TODO: This returns a 500 internal server error response but adds the data at
+     * the moment. Fix.
      * 
      * @param data
-     * @return Successful response for bulk adding data
+     * @return 201 Created Successful response for bulk adding data
      */
     @PostMapping("/bulk-add-data")
     public ResponseEntity<String> bulkAddData(@RequestBody List<SensorData> data) {
         service.saveBulkData(data);
-        return ResponseEntity.ok("Bulk weather data added successfully");
+        return new ResponseEntity<String>("Bulk weather data added successfully", HttpStatus.CREATED);
     }
 
     /**

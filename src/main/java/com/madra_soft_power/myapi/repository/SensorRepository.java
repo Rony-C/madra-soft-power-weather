@@ -78,4 +78,14 @@ public interface SensorRepository extends JpaRepository<SensorData, Long> {
                         @Param("startDate") LocalDateTime startDate,
                         @Param("endDate") LocalDateTime endDate);
 
+        /**
+         * Get by entry ID. Couldn't get findByID() working with Long/string conversion
+         * so wrote it manually
+         * 
+         * @param id
+         * @return One SensorData entry for the ID
+         */
+        @Query("SELECT s FROM SensorData s WHERE s.id = :id")
+        List<SensorData> getEntryByID(@Param("id") String id);
+
 }

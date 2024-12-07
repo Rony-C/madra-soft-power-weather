@@ -2,15 +2,19 @@ package com.madra_soft_power.myapi.controller;
 
 import com.madra_soft_power.myapi.entity.SensorData;
 import com.madra_soft_power.myapi.service.DataService;
+import com.madra_soft_power.myapi.repository.*;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * Handles the API Calls with RestController
@@ -27,6 +31,9 @@ public class DataController {
 
     @Autowired
     private DataService service;
+
+    @Autowired
+    private SensorRepository repository;
 
     // TODO: Handle empty responses from DB. Any GET request is currently returning
     // a 200 OK. Implement new ResponseEntity with HTTPStatus.ok, created, etc.
@@ -76,6 +83,18 @@ public class DataController {
     @GetMapping("/sensor/{sensorId}")
     public ResponseEntity<List<SensorData>> getBySensorID(@PathVariable String sensorId) {
         return ResponseEntity.ok(service.getDataBySensorId(sensorId));
+    }
+
+    /**
+     * Tried to get this working to pull from DB by entry ID but wasn't able to
+     * 
+     * @param id
+     * @return Entry of SensorData
+     */
+    @GetMapping("/entry/{id}")
+    public ResponseEntity<Object> getMethodName(@PathVariable String id) {
+        return ResponseEntity.ok(service.getEntryID(id));
+        // return ResponseEntity.ok(repository.getReferenceById(id));
     }
 
     /**

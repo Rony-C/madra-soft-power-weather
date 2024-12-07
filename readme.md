@@ -52,6 +52,7 @@ The main reason I didn't add any of these was down to time, I wanted to stick to
 <li>Get avg by metric http://localhost:8080/api/average/metric/humidity</li>
 <li>Get average of all sensors http://localhost:8080/api/average/sensors</li>
 <li>Get average by sensor for last week http://localhost:8080/api/average/sensor_1/last-week</li>
+<li>Get by entry ID http://localhost:8080/api/entry/88</li>
 </ul>
 
 <h2>POST</h2>

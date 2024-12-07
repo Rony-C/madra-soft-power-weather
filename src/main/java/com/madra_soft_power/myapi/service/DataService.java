@@ -118,4 +118,8 @@ public class DataService {
         return avgTemp != null ? avgTemp : 0.0;
     }
 
+    public Object getEntryID(String id) {
+        return repository.getEntryByID(id);
+    }
+
 }

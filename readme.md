@@ -1,5 +1,5 @@
 <p>
-I used Java, Maeven, Spring Boot, MySQL and Postman for this assignment. I would say I am roughly equally skilled at Java and Python. I have been meaning to give Spring Boot a good try and this seemed like a good opportunity to use and learn a bit about it.<br>
+I used Java 23, Maeven, Spring Boot 3.4, MySQL and Postman for this assignment. I would say I am roughly equally skilled at Java and Python. I have been meaning to give Spring Boot a good try and this seemed like a good opportunity to use and learn a bit about it.<br>
 
 MySQL Server is running locally to store the db info.
 I used Postman to test my API calls.<br>
